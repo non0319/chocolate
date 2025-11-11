@@ -1,0 +1,16 @@
+@use '_mixin' as m;
+
+.footer-avatar{
+    margin-bottom: -32px;
+}
+
+.footer{
+    position: relative;
+    background-color: m.$main-color;
+
+    p{
+        font-size: 0.75rem;
+        text-align: center;
+        padding: 25px;
+    }
+}

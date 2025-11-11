@@ -1,0 +1,136 @@
+@use '_mixin' as m;
+
+.advantage {
+    position: relative;
+    height: calc(100vh - m.$header-height);
+    margin-bottom: m.$section-margin;
+    overflow: hidden;
+
+    @include m.sp {
+        margin-bottom: m.$section-margin-sp;
+    }
+
+    &__items {
+        display: flex;
+        width: max-content;
+        height: 100%;
+
+        &--item {
+            min-width: 100vw;
+            display: flex;
+            padding-inline: 5px;
+            height: 60vh;
+            
+            @include m.sp {
+                height: 70vh;
+            }
+
+            .inner {
+                max-width: 1200px;
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                padding-inline: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                border-top-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+
+                @include m.sp {
+                    padding-inline: 5%;
+                }
+
+                img {
+                    object-fit: cover;
+                    object-position: center center;
+                    display: block;
+                }
+
+                &.item1 {
+                    background: linear-gradient(90deg, #B4C6D9 0%, #D0DCEA 50% ,m.$main-color 100%);
+                    
+                    h3 {
+                        margin-bottom: 15px;
+                        letter-spacing: 2px;
+                        @include m.sp {
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 15px;
+                        line-height: 250%;
+                        @include m.sp {
+                            margin-bottom: 10px;
+                            line-height: 180%;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 30vh;
+                    }
+                }
+                &.item2 {
+                    background: linear-gradient(90deg, m.$main-color 0%, #B4C6D9 50%, #D0DCEA 100%);
+
+                    h3 {
+                        margin-top: 20px;
+                        letter-spacing: 2px;
+                        @include m.sp {
+                            margin-top: 15px;
+                        }
+                    }
+
+                    p {
+                        margin-top: 15px;
+                        line-height: 250%;
+                        @include m.sp {
+                            margin-top: 10px;
+                            line-height: 200%;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        height: 25vh;
+                    }
+                    
+                }
+                &.item3 {
+                    flex-direction: row-reverse;
+                    background: linear-gradient(90deg, #D0DCEA 0%, m.$main-color 50%,#B4C6D9 100%);
+                    padding-block: 50px;
+
+                    h3 {
+                        writing-mode: vertical-rl;
+                        margin-left: 2%;
+                        letter-spacing: 3px;
+                    }
+                    p {
+                        writing-mode: vertical-rl;
+                        line-height: 250%;
+                        margin-left: 3%;
+                        letter-spacing: 3px;
+
+                        @include m.sp {
+                            line-height: 180%;
+                            margin-left: 1.5%;
+                            letter-spacing: 1.5px;
+                        }
+                    }
+                    img {
+                        width: 70%;
+                        height: 100%;
+                        
+                        @include m.sp {
+                            width: 50%;
+                            object-position: 70% 60%;
+                        }
+                    }
+                }
+
+            
+            }
+        }
+    }
+}
