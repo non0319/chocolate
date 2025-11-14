@@ -1,0 +1,41 @@
+@use '_mixin' as *;
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Noto Sans JP Bold', 'M PLUS 1p Regular';
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    background-color: $base-color;
+    color: $font-color;
+}
+
+a {
+    text-decoration: none;
+    color: $font-color;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.container {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 2%;
+
+    @include sp {
+        padding-inline: 16px;
+    }
+}
