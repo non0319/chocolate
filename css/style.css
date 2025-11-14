@@ -1,3 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Noto Sans JP Bold", "M PLUS 1p Regular";
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "width" 100;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.container {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 2%;
+}
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 16px;
+  }
+}
+
+.blue {
+  color: #4B80AA;
+}
+
+.large {
+  font-size: 64px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav-menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
 footer {
   max-width: 1120px;
 }
@@ -6,5 +66,4 @@ footer .container {
 }
 footer a {
   color: black;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
