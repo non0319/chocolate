@@ -1,3 +1,56 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Noto Sans JP Bold", "M PLUS 1p Regular";
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "width" 100;
+  color: #3c3c3c;
+}
+
+a {
+  text-decoration: none;
+  color: #3c3c3c;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.container {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 2%;
+}
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 16px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav-menu ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
 footer {
   max-width: 1120px;
 }
@@ -7,4 +60,338 @@ footer .container {
 footer a {
   color: black;
 }
-/*# sourceMappingURL=style.css.map */
+
+#achievements {
+  background: #333;
+  padding: 100px 0;
+  text-align: center;
+  /* ======== 本全体のラッパー ======== */
+  /* ======== 本体部分（右ページのみ） ======== */
+  /* ======== 各ページ ======== */
+  /* ======== 受講生カード ======== */
+  /* ======== 下部リンク ======== */
+  /* ======== スマホ対応 ======== */
+}
+#achievements .book-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: 50px;
+  /* 背表紙の影 */
+}
+#achievements .book-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  width: 20px;
+  height: 70%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+  border-radius: 2px 0 0 2px;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.05);
+}
+#achievements #book {
+  width: 600px;
+  height: 420px;
+  position: relative;
+  background: #fff;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  margin-left: 20px;
+  /* 左端の影で「綴じられた本」感を出す */
+}
+#achievements #book::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+}
+#achievements .page {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: relative;
+  box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.06);
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: bottom right;
+}
+#achievements .page:hover {
+  transform: rotateY(-2deg);
+  box-shadow: -4px 6px 15px rgba(0, 0, 0, 0.1);
+}
+#achievements .student_card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+#achievements .heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+#achievements .heading .card_title {
+  color: #5a8ee0;
+  font-weight: bold;
+}
+#achievements .card_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+#achievements .card_item_student {
+  flex: 2;
+}
+#achievements .card_item_student img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+#achievements .card_item_student .student_name {
+  font-weight: bold;
+  color: #333;
+}
+#achievements .card_item_student .student_info {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+#achievements .card_item_student .student_comment {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+#achievements .card_item_achievement {
+  flex: 1;
+  text-align: center;
+}
+#achievements .card_item_achievement img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 10px;
+}
+#achievements .card_item_achievement a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+#achievements .card_item_achievement a:hover {
+  color: #5a8ee0;
+}
+#achievements .card_item_achievement a img {
+  width: 14px;
+  height: 14px;
+}
+#achievements .rink_btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: #5a8ee0;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+#achievements .rink_btn:hover {
+  background: #3e73c3;
+}
+@media (max-width: 768px) {
+  #achievements #book {
+    width: 90%;
+    height: auto;
+    margin-left: 0;
+  }
+  #achievements .student_card {
+    padding: 20px;
+  }
+  #achievements .card_item {
+    flex-direction: column;
+    align-items: center;
+  }
+  #achievements .card_item_student, #achievements .card_item_achievement {
+    width: 100%;
+    text-align: center;
+  }
+  #achievements .card_item_student img {
+    margin: 0 auto 10px;
+  }
+}
+
+.instructor-section {
+  position: relative;
+  padding: 100px 0;
+  height: 420vh;
+}
+.instructor-section .teachers-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 10;
+}
+.instructor-section .card-area {
+  position: relative;
+  width: 100%;
+  height: 320vh;
+}
+.instructor-section .card-area .teacher_cards {
+  position: sticky;
+  top: 160px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 400px;
+}
+.instructor-section .card-area .card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  overflow: hidden;
+  padding: 40px;
+  gap: 40px;
+}
+.instructor-section .card-area .card .card-image {
+  flex: 0 0 30%;
+}
+.instructor-section .card-area .card .card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.instructor-section .card-area .card .card-content {
+  flex: 1;
+}
+.instructor-section .card-area .card .card-content .name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.instructor-section .card-area .card .card-content .point {
+  font-size: 1rem;
+  color: #8a6bb8;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.instructor-section .card-area .card .card-content .comment {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .instructor-section .card-area .card {
+    flex-direction: column;
+    height: auto;
+    padding: 24px;
+  }
+  .instructor-section .card-area .card .card-image {
+    width: 100%;
+    flex: none;
+  }
+  .instructor-section .card-area .card .card-content {
+    text-align: center;
+  }
+  .instructor-section .card-area .card .card-content .name {
+    margin-top: 20px;
+  }
+}
+.metaleaf_area {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.metaleaf_area .bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature {
+  width: 80px;
+  height: 80px;
+  background: url(icon.png) no-repeat center/cover;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* 適当に位置を固定した例 */
+.f1 {
+  top: 20%;
+  left: 15%;
+}
+
+.f2 {
+  top: 35%;
+  right: 20%;
+}
+
+.f3 {
+  bottom: 25%;
+  left: 30%;
+}
+
+.f4 {
+  top: 60%;
+  right: 35%;
+}
+
+.f5 {
+  bottom: 10%;
+  right: 10%;
+}
+
+/* モーダル */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */
