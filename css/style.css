@@ -38,6 +38,14 @@ img {
   }
 }
 
+.blue {
+  color: #4B80AA;
+}
+
+.large {
+  font-size: 64px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
