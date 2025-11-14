@@ -1,0 +1,67 @@
+.metaleaf_area {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.metaleaf_area .bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature {
+    width: 80px;
+    height: 80px;
+    background: url(icon.png) no-repeat center/cover;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* 適当に位置を固定した例 */
+.f1 {
+    top: 20%;
+    left: 15%;
+}
+
+.f2 {
+    top: 35%;
+    right: 20%;
+}
+
+.f3 {
+    bottom: 25%;
+    left: 30%;
+}
+
+.f4 {
+    top: 60%;
+    right: 35%;
+}
+
+.f5 {
+    bottom: 10%;
+    right: 10%;
+}
+
+/* モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
