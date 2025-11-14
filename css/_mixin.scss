@@ -27,10 +27,15 @@ $sp: 768px;
 // 定数宣言
 // ---------------------------------------
 $main-color: #4B80AA;                   //メインカラー
+$sub-color: #E3ECF8;                    //サブカラー
 $accent-color: #E97C27;                 //アクセントカラー
 $font-color: #3c3c3c;                   //フォントカラー
 
-$header-height: 80px;                     //ヘッダー高さ
+$section-title: 2.5rem;                     //セクションタイトル
+$lead: 1.5rem;                              //h3 リード文
+$heading: 1.25rem;                          //h4
+
+
 
 $section-margin: 100px;                   //PCセクション間の余白
 $section-margin-sp: 50px;                 //SPセクション間の余白

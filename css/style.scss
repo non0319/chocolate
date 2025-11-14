@@ -1,7 +1,11 @@
-
 @use "common" as *;
 @use "mixin" as *;
 @use "header" as *;
 @use "footer" as*;
+
+//セクション
+@use "achievements" as *;
+@use "teachers" as *;
+@use "metaleaf" as *;
 
 
