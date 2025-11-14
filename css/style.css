@@ -305,4 +305,12 @@ img {
   .instructor-section .card-area .card .card-content .name {
     margin-top: 20px;
   }
+footer {
+  max-width: 1120px;
+}
+footer .container {
+  display: flex;
+}
+footer a {
+  color: black;
 }/*# sourceMappingURL=style.css.map */
