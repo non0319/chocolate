@@ -1,38 +1,38 @@
+@use "mixin" as *;
+
 #achievements {
-    background: #333;
-    padding: 100px 0;
     text-align: center;
+    margin-top: $section-margin;
+}
 
+/* ======== 本全体のラッパー ======== */
+.book-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin: 0 auto 20px;
+    padding: 50px;
 
-    /* ======== 本全体のラッパー ======== */
-    .book-wrapper {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 80vh;
-        margin: 0 auto;
-        padding: 50px;
-
-        /* 背表紙の影 */
-        &::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-100%, -50%);
-            width: 20px;
-            height: 70%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
-            border-radius: 2px 0 0 2px;
-            box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.05);
-        }
+    /* 背表紙の影 */
+    &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-100%, -50%);
+        width: 20px;
+        height: 70%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+        border-radius: 2px 0 0 2px;
+        box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.05);
     }
 
     /* ======== 本体部分（右ページのみ） ======== */
     #book {
-        width: 600px;
-        height: 420px;
+        width: 720px;
+        height: 560px;
         position: relative;
         background: #fff;
         box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
@@ -48,162 +48,150 @@
             top: 0;
             width: 15px;
             height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+            background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
         }
     }
+}
 
-    /* ======== 各ページ ======== */
-    .page {
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        position: relative;
-        box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.06);
-        border-radius: 0 8px 8px 0;
-        overflow: hidden;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        transform-origin: bottom right;
 
-        &:hover {
-            transform: rotateY(-2deg);
-            box-shadow: -4px 6px 15px rgba(0, 0, 0, 0.1);
-        }
+/* ======== 各ページ ======== */
+.page {
+    width: 100%;
+    height: 100%;
+    background: $sub-color;
+    position: relative;
+    box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.06);
+    border-radius: 0 8px 8px 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: bottom right;
+
+    &:hover {
+        transform: rotateY(-2deg);
+        box-shadow: -4px 6px 15px rgba(0, 0, 0, 0.1);
     }
+}
 
-    /* ======== 受講生カード ======== */
-    .student_card {
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        box-sizing: border-box;
-        text-align: left;
-    }
+/* ======== 受講生カード ======== */
+.student_card {
+    padding: 40px;
+    text-align: center;
 
-    .heading {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #333;
-        line-height: 1.6;
-        margin-bottom: 20px;
-
-        .card_title {
-            color: #5a8ee0; // 青系アクセント
-            font-weight: bold;
-        }
+    .heading_strong {
+        color: $accent-color;
     }
 
     .card_item {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: 20px;
+        text-align: center;
+        align-items: center;
+        box-sizing: border-box;
+        gap: 40px;
+        margin-top: 20px;
 
-        &_student {
-            flex: 2;
+        .card_item_student,
+        .card_item_achievement {
+            width: 48%;
+        }
 
+        .card_item_student{
+            
             img {
-                width: 100px;
-                height: 100px;
-                object-fit: cover;
+                display: block;
+                width: 200px;
+                height: 200px;
                 border-radius: 50%;
-                margin-bottom: 10px;
+                margin: 0 auto;
             }
 
             .student_name {
                 font-weight: bold;
-                color: #333;
-            }
-
-            .student_info {
-                font-size: 0.9rem;
-                color: #777;
-                margin-bottom: 10px;
+                margin-top: 8px;
             }
 
             .student_comment {
-                font-size: 0.95rem;
-                color: #555;
-                line-height: 1.6;
+                margin-top: 16px;
+                text-align: left;
             }
         }
 
-        &_achievement {
-            flex: 1;
-            text-align: center;
+        .card_item_achievement {
 
-            img {
+            .achievement_img img {
+                display: block;
                 width: 100%;
-                height: auto;
-                border-radius: 6px;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-                margin-bottom: 10px;
+                max-width: 100%; 
+                height: 200px;
+                object-fit: cover;
+                filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.15));
             }
 
-            a {
-                display: inline-flex;
+            .achievement_link {
+                display: flex;
+                justify-content: center;
                 align-items: center;
-                gap: 5px;
-                font-size: 0.9rem;
-                color: #333;
-                text-decoration: none;
-                transition: color 0.2s;
+                gap: 8px;
+                margin-top: 20px;
 
-                &:hover {
-                    color: #5a8ee0;
+                .link_text{
+                    display: block;
+                    color: $main-color;
                 }
 
-                img {
-                    width: 14px;
-                    height: 14px;
+                .link_icon {
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }
     }
+}
 
-    /* ======== 下部リンク ======== */
-    .rink_btn {
-        display: inline-block;
-        margin-top: 40px;
-        padding: 12px 30px;
-        background: #5a8ee0;
-        color: #fff;
-        border-radius: 30px;
-        text-decoration: none;
-        transition: background 0.3s;
 
-        &:hover {
-            background: #3e73c3;
-        }
+/* ======== スマホ対応 ======== */
+@media (max-width: 768px) {
+    #book {
+        width: 90%;
+        height: auto;
+        margin-left: 0;
     }
 
-    /* ======== スマホ対応 ======== */
-    @media (max-width: 768px) {
-        #book {
-            width: 90%;
-            height: auto;
-            margin-left: 0;
+    .student_card {
+        padding: 20px;
+    }
+
+    .card_item {
+        flex-direction: column;
+        align-items: center;
+
+        &_student,
+        &_achievement {
+            width: 100%;
+            text-align: center;
         }
 
-        .student_card {
-            padding: 20px;
+        &_student img {
+            margin: 0 auto 10px;
         }
+    }
+}
 
-        .card_item {
-            flex-direction: column;
-            align-items: center;
+.link_btn_blue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: $main-color;
+    color: #fff;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 20px auto 0;
 
-            &_student,
-            &_achievement {
-                width: 100%;
-                text-align: center;
-            }
-
-            &_student img {
-                margin: 0 auto 10px;
-            }
-        }
+    img{
+        width: 60px;
+        height: 12px;
     }
 }

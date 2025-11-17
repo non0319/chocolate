@@ -1,48 +1,83 @@
-.metaleaf_area {
-    position: relative;
-    width: 100%;
-    height: 600px;
+@use "mixin" as *;
+
+#mataleaf {
+    text-align: center;
+    margin-top: $section-margin;
+
+    @include sp {
+        margin-top: $section-margin-sp;
+    }
+
+    .metaleaf_area {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        overflow: hidden;
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .feature {
+            position: absolute;
+            width: 120px;
+            text-align: center;
+            z-index: 2;
+            cursor: pointer;
+
+            .icon{
+                width: 100px;
+                height: 80px;
+                margin: 0 auto;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            
+            p{
+                font-size: 0.75rem;
+                margin-top: 5px;
+            }
+        }
+
+        .f1 {
+            top: 20%;
+            left: 15%;
+        }
+
+        .f2 {
+            top: 35%;
+            right: 20%;
+        }
+
+        .f3 {
+            bottom: 25%;
+            left: 30%;
+        }
+
+        .f4 {
+            top: 60%;
+            right: 35%;
+        }
+
+        .f5 {
+            bottom: 10%;
+            right: 10%;
+        }
+    }
 }
 
-.metaleaf_area .bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.feature {
-    width: 80px;
-    height: 80px;
-    background: url(icon.png) no-repeat center/cover;
-    position: absolute;
-    cursor: pointer;
-}
 
-/* 適当に位置を固定した例 */
-.f1 {
-    top: 20%;
-    left: 15%;
-}
-
-.f2 {
-    top: 35%;
-    right: 20%;
-}
-
-.f3 {
-    bottom: 25%;
-    left: 30%;
-}
-
-.f4 {
-    top: 60%;
-    right: 35%;
-}
-
-.f5 {
-    bottom: 10%;
-    right: 10%;
-}
 
 /* モーダル */
 .modal {
