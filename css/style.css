@@ -207,7 +207,8 @@ footer a {
   width: 100%;
   max-width: 100%;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.15));
 }
 .student_card .card_item .card_item_achievement .achievement_link {
@@ -342,7 +343,8 @@ footer a {
   width: 100%;
   height: auto;
   border-radius: 16px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .card-content {
   width: 68%;
@@ -426,7 +428,8 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: 1;
 }
 #mataleaf .metaleaf_area .feature {
@@ -444,7 +447,8 @@ footer a {
 #mataleaf .metaleaf_area .feature .icon img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #mataleaf .metaleaf_area .feature p {
   font-size: 0.75rem;
@@ -516,7 +520,8 @@ footer a {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transform: translateY(-25px);
 }
 .container .swiper .circle-wrap .step-title {
