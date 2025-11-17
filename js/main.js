@@ -126,3 +126,4 @@ setupCards();
 window.addEventListener("resize", () => {
   setupCards();
 });
+
