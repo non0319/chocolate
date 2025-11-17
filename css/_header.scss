@@ -1,17 +1,89 @@
 @use '_mixin' as *;
 
 header {
+    width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    gap: 10px;
 
-    .nav-menu {
+    .logo {
+        width: 180px;
+    }
+
+    nav.flip-nav {
+        background: #fff;
+        padding: 10px 25px;
+        border-radius: 40px;
+
         ul {
             display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
             list-style: none;
-            padding: 0;
             margin: 0;
-            gap: 20px;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+
+            .flip-btn {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 40px;
+                position: relative;
+                perspective: 800px;
+                text-decoration: none;
+
+                span {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 12px;
+                    backface-visibility: hidden;
+                    transition: transform .6s, opacity .6s;
+                }
+
+                .jp {
+                    opacity: 1;
+                    transform: rotateX(0deg);
+                }
+
+                .en {
+                    color: $main-color;
+                    opacity: 0;
+                    transform: rotateX(-180deg);
+                }
+
+                &:hover .jp {
+                    transform: rotateX(180deg);
+                    opacity: 0;
+                }
+
+                &:hover .en {
+                    transform: rotateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .insta-link img {
+            width: 26px;
+            height: 26px;
         }
     }
 }
