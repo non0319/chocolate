@@ -46,6 +46,18 @@ img {
   font-size: 64px;
 }
 
+.section-title {
+  font-size: 2.5rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+}
+
+.heading {
+  font-size: 1.25rem;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -170,7 +182,8 @@ footer a {
 #achievements .card_item_student img {
   width: 100px;
   height: 100px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -297,7 +310,8 @@ footer a {
   width: 100%;
   height: auto;
   border-radius: 16px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .instructor-section .card-area .card .card-content {
   flex: 1;
@@ -345,7 +359,8 @@ footer a {
 .metaleaf_area .bg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .feature {
@@ -402,4 +417,70 @@ footer a {
   width: 80%;
   max-width: 400px;
   border-radius: 10px;
+}
+
+.container .swiper {
+  width: 100%;
+  height: 60vh;
+}
+.container .swiper .circle-wrap {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  padding-bottom: 50px;
+}
+.container .swiper .circle-wrap img {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: translateY(-25px);
+}
+.container .swiper .circle-wrap .step-title {
+  position: absolute;
+  top: 255px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: white;
+}
+.container .swiper .circle-wrap .step-sub {
+  position: absolute;
+  top: 275px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: black;
+}
+.container .swiper .circle-wrap .step-title,
+.container .swiper .circle-wrap .step-sub {
+  font-weight: bolder;
+  white-space: nowrap;
+}
+.container .swiper .blue {
+  background: #4B80AA;
+}
+.container .swiper .orange {
+  background: #E97C27;
+}
+.container .swiper .step-text {
+  width: 320px;
+  margin-top: 20px;
+  text-align: left;
+  line-height: 1.7;
+}
+.container .price {
+  background-color: #4B80AA;
+  text-align: center;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
