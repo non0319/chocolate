@@ -35,16 +35,6 @@ window.addEventListener("load", () => {
   cards.forEach((card, i) => {
     tl.to(card, {
       y: -i * 0, // 重なり分（必要に応じて調整）
-    gsap.to(card, {
-      scrollTrigger: {
-        trigger: ".card-area",
-        start: () => isMobile
-          ? `top+=${i * 250} center`  // SPは出現タイミングを短く
-          : `top+=${i * 350} center`, // PCは出現タイミングを長め
-        end: "bottom center",
-        scrub: true,
-      },
-      y: isMobile ? -i * 50 : -i * 80, // SP/PCで上方向の重なり量を調整
       opacity: 1,
       duration: 0.5
     }, i * 0.5); // カードごとにタイミングをずらす
