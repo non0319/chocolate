@@ -32,11 +32,6 @@ img {
   margin: 0 auto;
   padding-inline: 2%;
 }
-@media (max-width: 768px) {
-  .container {
-    padding-inline: 16px;
-  }
-}
 
 .blue {
   color: #4B80AA;
@@ -45,34 +40,52 @@ img {
 .large {
   font-size: 64px;
 }
+@media (max-width: 768px) {
+  .large {
+    font-size: 32px;
+  }
+}
 
 .section-title {
   font-size: 2.5rem;
-}
-
-.lead {
-  font-size: 1.5rem;
-}
-
-.heading {
-  font-size: 1.25rem;
-}
-
-.section_title {
-  font-size: 2.5rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
 }
 
 .lead {
   font-size: 1.5rem;
   font-weight: normal;
   text-align: center;
-  margin: 40px 0;
+  margin: 60px 0;
+}
+@media (max-width: 768px) {
+  .lead {
+    font-size: 1.25rem;
+    margin: 20px;
+  }
 }
 
 .heading {
   font-size: 1.25rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .heading {
+    padding-inline: 16px;
+  }
+}
+
+.sp-br {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp-br {
+    display: block;
+  }
 }
 
 header {
@@ -225,8 +238,7 @@ footer a {
 .mainvisual .mv-right ul.image-slider li img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .mainvisual .mv-right .sit-img {
@@ -270,79 +282,34 @@ footer a {
   text-align: center;
   margin-top: 100px;
 }
-
-/* ======== 本全体のラッパー ======== */
-.book-wrapper {
+#achievements .book-area {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  margin: 0 auto 20px;
-  padding: 50px;
-  /* 背表紙の影 */
-  /* ======== 本体部分（右ページのみ） ======== */
-}
-.book-wrapper::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-100%, -50%);
-  width: 20px;
-  height: 70%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
-  border-radius: 2px 0 0 2px;
-  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.05);
-}
-.book-wrapper #book {
-  width: 720px;
+  max-width: 800px;
+  width: 100%;
   height: 560px;
-  position: relative;
-  background: #fff;
-  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 0 8px 8px 0;
-  overflow: hidden;
-  margin-left: 20px;
-  /* 左端の影で「綴じられた本」感を出す */
+  margin: 0 auto 60px;
 }
-.book-wrapper #book::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 15px;
-  height: 100%;
-  background: linear-gradient(to right, rgb(0, 0, 0), transparent);
+#achievements .book-area .book-wrapper {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: 640px;
+  box-shadow: 0 12px 20px -10px rgba(81, 64, 49, 0.6);
 }
 
-/* ======== 各ページ ======== */
-.page {
+.book-item {
   width: 100%;
   height: 100%;
   background: #E3ECF8;
-  position: relative;
-  box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.06);
-  border-radius: 0 8px 8px 0;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: bottom right;
 }
-.page:hover {
-  transform: rotateY(-2deg);
-  box-shadow: -4px 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ======== 受講生カード ======== */
-.student_card {
+.book-item .student_card {
   padding: 40px;
   text-align: center;
 }
-.student_card .heading_strong {
+.book-item .student_card .heading_strong {
   color: #E97C27;
 }
-.student_card .card_item {
+.book-item .student_card .card_item {
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -351,91 +318,68 @@ footer a {
   gap: 40px;
   margin-top: 20px;
 }
-.student_card .card_item .card_item_student,
-.student_card .card_item .card_item_achievement {
+.book-item .student_card .card_item .card_item_student,
+.book-item .student_card .card_item .card_item_achievement {
   width: 48%;
 }
-.student_card .card_item .card_item_student img {
+.book-item .student_card .card_item .card_item_student img {
   display: block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin: 0 auto;
 }
-.student_card .card_item .card_item_student .student_name {
+.book-item .student_card .card_item .card_item_student .student_name {
   font-weight: bold;
   margin-top: 8px;
 }
-.student_card .card_item .card_item_student .student_comment {
+.book-item .student_card .card_item .card_item_student .student_comment {
   margin-top: 16px;
   text-align: left;
 }
-.student_card .card_item .card_item_achievement .achievement_img img {
+.book-item .student_card .card_item .card_item_achievement .achievement_img img {
   display: block;
   width: 100%;
   max-width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.15));
 }
-.student_card .card_item .card_item_achievement .achievement_link {
+.book-item .student_card .card_item .card_item_achievement .achievement_link {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   margin-top: 20px;
 }
-.student_card .card_item .card_item_achievement .achievement_link .link_text {
+.book-item .student_card .card_item .card_item_achievement .achievement_link .link_text {
   display: block;
   color: #4B80AA;
 }
-.student_card .card_item .card_item_achievement .achievement_link .link_icon {
+.book-item .student_card .card_item .card_item_achievement .achievement_link .link_icon {
   width: 20px;
   height: 20px;
 }
 
-/* ======== スマホ対応 ======== */
-@media (max-width: 768px) {
-  #book {
-    width: 90%;
-    height: auto;
-    margin-left: 0;
-  }
-  .student_card {
-    padding: 20px;
-  }
-  .card_item {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card_item_student, .card_item_achievement {
-    width: 100%;
-    text-align: center;
-  }
-  .card_item_student img {
-    margin: 0 auto 10px;
-  }
-}
 .link_btn_blue {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  background-color: #4B80AA;
-  color: #fff;
   width: 300px;
   height: 40px;
-  border-radius: 20px;
-  margin: 20px auto 0;
+  border-radius: 16px;
+  background: #4B80AA;
+  color: #fff;
+  gap: 16px;
+  margin: o auto;
 }
 .link_btn_blue img {
-  width: 60px;
-  height: 12px;
+  width: 40px;
+  height: 100%;
+  object-fit: contain;
 }
 
 #teachers {
-  position: relative;
   background-color: #E3ECF8;
   padding: 60px 0;
   margin-top: 100px;
@@ -443,76 +387,85 @@ footer a {
 @media (max-width: 768px) {
   #teachers {
     height: auto;
-    padding-bottom: 60px;
+    padding: 40px 16px;
     margin-top: 50px;
   }
 }
-#teachers .teachers-header {
+#teachers .teachers-area {
   position: relative;
+}
+#teachers .teachers-area .teachers-header {
+  position: sticky;
+  top: 100px;
   text-align: center;
   margin-bottom: 80px;
 }
-#teachers .card-area {
+@media (max-width: 768px) {
+  #teachers .teachers-area .teachers-header {
+    position: static;
+    top: 0;
+    margin-bottom: 20px;
+  }
+}
+#teachers .teachers-area .card-area {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100vh;
 }
-#teachers .card-area .teacher_cards {
-  position: sticky;
-  top: 80px;
+#teachers .teachers-area .card-area .teacher-cards {
+  position: absolute;
+  top: 350px;
+  left: 0;
   width: 100%;
-  height: 450px;
   margin: 0 auto;
-  perspective: 1000px;
 }
 @media (max-width: 768px) {
-  #teachers .card-area .teacher_cards {
-    position: static;
-    top: auto;
-    height: auto;
+  #teachers .teachers-area .card-area .teacher-cards {
+    top: 0;
+    height: 100%;
   }
 }
 
 .card {
   position: absolute;
-  width: 100%;
-  height: 450px;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 350px;
   background: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   opacity: 0;
-  padding: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   gap: 40px;
-  transform: translateY(100px) scale(0.95);
+  padding: 40px 100px;
+  transform: translateY(300px);
+  z-index: 10;
 }
 @media (max-width: 768px) {
   .card {
-    position: relative;
     flex-direction: column;
-    top: auto;
-    padding: 24px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 95%;
+    border-radius: 16px;
+    padding: 8px;
     margin-top: 20px;
-    transform: none;
   }
 }
-.card .card-image {
+.card .card-img {
   width: 30%;
 }
 @media (max-width: 768px) {
-  .card .card-image {
+  .card .card-img {
     width: 100%;
   }
 }
-.card .card-image img {
+.card .card-img img {
   width: 100%;
-  height: auto;
   border-radius: 16px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .card .card-content {
   width: 68%;
@@ -522,15 +475,15 @@ footer a {
     width: 100%;
   }
 }
-.card .card-content .teacher_name {
+.card .card-content .teacher-name {
   font-size: 1.5rem;
   color: #4B80AA;
   font-weight: 600;
   margin-bottom: 10px;
 }
 @media (max-width: 768px) {
-  .card .card-content .teacher_name {
-    margin-top: 20px;
+  .card .card-content .teacher-name {
+    margin-top: 8px;
   }
 }
 .card .card-content .point {
@@ -538,18 +491,27 @@ footer a {
   margin-bottom: 16px;
 }
 .card .card-content .comment {
-  line-height: 1.8;
   color: #555;
 }
+@media (max-width: 768px) {
+  .card .card-content .comment {
+    font-size: 0.875rem;
+  }
+}
 
-.instagram_area {
+.instagram-area {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 80px;
 }
-.instagram_area .instagram_area_text {
-  margin-top: 20px;
+.instagram-area .instagram-area-text {
+  font-size: 1.125rem;
 }
-.instagram_area .instagram_post {
+@media (max-width: 768px) {
+  .instagram-area .instagram-area-text {
+    font-size: 1rem;
+  }
+}
+.instagram-area .instagram-post {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -557,90 +519,140 @@ footer a {
   margin-top: 20px;
 }
 @media (max-width: 768px) {
-  .instagram_area .instagram_post {
+  .instagram-area .instagram-post {
     flex-direction: column;
   }
 }
-.instagram_area .instagram_post .post_kakashi, .instagram_area .instagram_post .post_iruka {
+.instagram-area .instagram-post .post-kakashi,
+.instagram-area .instagram-post .post-iruka {
   width: 320px;
-  height: 400px;
-}
-.instagram_area .instagram_post .post_kakashi .instagram-media, .instagram_area .instagram_post .post_iruka .instagram-media {
-  width: 100%;
   height: auto;
 }
+.instagram-area .instagram-post .post-kakashi .instagram-media,
+.instagram-area .instagram-post .post-iruka .instagram-media {
+  width: 100%;
+}
 @media (max-width: 768px) {
-  .instagram_area .instagram_post .post_iruka {
+  .instagram-area .instagram-post .post-iruka {
     margin-top: 20px;
   }
 }
 
-#mataleaf {
+#metaleaf {
   text-align: center;
   margin-top: 100px;
 }
 @media (max-width: 768px) {
-  #mataleaf {
+  #metaleaf {
     margin-top: 50px;
   }
 }
-#mataleaf .metaleaf_area {
+#metaleaf .metaleaf_area {
   position: relative;
   width: 100%;
   height: 600px;
   overflow: hidden;
 }
-#mataleaf .metaleaf_area .bg {
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area {
+    height: 100vh;
+  }
+}
+#metaleaf .metaleaf_area .bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+  opacity: 0.5;
   z-index: 1;
 }
-#mataleaf .metaleaf_area .feature {
+#metaleaf .metaleaf_area .feature {
   position: absolute;
   width: 120px;
+  height: 120px;
+  border: 5px solid #E97C27;
+  border-radius: 50%;
+  background-color: #fff;
   text-align: center;
   z-index: 2;
   cursor: pointer;
+  transition: 0.6s;
 }
-#mataleaf .metaleaf_area .feature .icon {
-  width: 100px;
-  height: 80px;
-  margin: 0 auto;
+#metaleaf .metaleaf_area .feature:hover {
+  transform: scale(1.2);
 }
-#mataleaf .metaleaf_area .feature .icon img {
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .feature {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #E97C27;
+  }
+}
+#metaleaf .metaleaf_area .feature .icon {
+  width: 56px;
+  height: 56px;
+  margin: 16px auto 0;
+}
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .feature .icon {
+    margin: 8px auto 0;
+  }
+}
+#metaleaf .metaleaf_area .feature .icon img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-#mataleaf .metaleaf_area .feature p {
-  font-size: 0.75rem;
-  margin-top: 5px;
+#metaleaf .metaleaf_area .feature p {
+  font-size: 0.625rem;
+  text-align: center;
 }
-#mataleaf .metaleaf_area .f1 {
-  top: 20%;
-  left: 15%;
+#metaleaf .metaleaf_area .f1 {
+  top: 40%;
+  left: 48%;
 }
-#mataleaf .metaleaf_area .f2 {
-  top: 35%;
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .f1 {
+    left: 35%;
+  }
+}
+#metaleaf .metaleaf_area .f2 {
+  bottom: 30%;
   right: 20%;
 }
-#mataleaf .metaleaf_area .f3 {
-  bottom: 25%;
-  left: 30%;
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .f2 {
+    right: 5%;
+  }
 }
-#mataleaf .metaleaf_area .f4 {
-  top: 60%;
-  right: 35%;
+#metaleaf .metaleaf_area .f3 {
+  top: 25%;
+  left: 25%;
 }
-#mataleaf .metaleaf_area .f5 {
-  bottom: 10%;
-  right: 10%;
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .f3 {
+    left: 10%;
+  }
+}
+#metaleaf .metaleaf_area .f4 {
+  top: 12%;
+  right: 25%;
+}
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .f4 {
+    right: 10%;
+  }
+}
+#metaleaf .metaleaf_area .f5 {
+  bottom: 15%;
+  left: 15%;
+}
+@media (max-width: 768px) {
+  #metaleaf .metaleaf_area .f5 {
+    left: 5%;
+  }
 }
 
 /* モーダル */
@@ -651,6 +663,8 @@ footer a {
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  transition: 0.6s;
+  z-index: 99;
 }
 
 .modal.open {
@@ -658,11 +672,54 @@ footer a {
 }
 
 .modal-content {
+  position: relative;
   background: #fff;
   padding: 20px;
-  width: 80%;
-  max-width: 400px;
+  width: 480px;
   border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .modal-content {
+    width: 320px;
+  }
+}
+.modal-content .close {
+  position: absolute;
+  top: 4px;
+  right: 20px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.6s;
+}
+.modal-content .close:hover {
+  transform: scale(1.2);
+}
+.modal-content .modal_img {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  object-fit: contain;
+  margin-top: 16px;
+}
+.modal-content .modal_text {
+  margin: 8px 0;
+}
+.modal-content .modal_text .modal_title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+#cta1, #cta2 {
+  padding: 40px 0;
+  margin-top: 100px;
+  text-align: center;
+}
+#cta1 p, #cta2 p {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
 }
 
 .container .swiper {
@@ -688,8 +745,7 @@ footer a {
   height: 250px;
   position: relative;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: translateY(-25px);
 }
 .container .swiper .circle-wrap .step-title {
