@@ -51,10 +51,10 @@ $overlap-amount: 50px;
     .info-card {
         // 広がる演出時のみ transform を1.2sに上書き
         transition: 
-            transform 1.2s ease-out,
+            transform 1s ease-out,
             box-shadow 0.1s ease-out,
             z-index 0.4s,
-            opacity 1.2s ease-out;
+            opacity 1s ease-out;
             
         transition-delay: 0.1s !important;
         opacity: 1;
