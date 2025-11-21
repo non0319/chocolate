@@ -1,39 +1,72 @@
-
 /*=================================================
   achievements
 ===================================================*/
 
-const cards = document.querySelectorAll(".card");
 
-function setupCards() {
-  const isMobile = window.innerWidth <= 768;
 
-  // 既存のScrollTriggerを全て削除して再設定（リサイズ時用）
-  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+/*=================================================
+  teachers
+===================================================*/
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+  const cards = document.querySelectorAll(".teacher-cards .card");
+  const cardArea = document.querySelector(".card-area");
+
+  // 画面幅に応じた1枚あたりのスクロール距離
+  const cardHeight = window.innerWidth <= 768 ? 300 : 400; // SPは300px, PCは400px
+
+  const pinDistance = cards.length * cardHeight;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: cardArea,
+      start: "top top",
+      end: "+=" + pinDistance,
+      scrub: true,
+      pin: ".card-area",
+      anticipatePin: 1
+    }
+  });
 
   cards.forEach((card, i) => {
-    gsap.to(card, {
-      scrollTrigger: {
-        trigger: ".card-area",
-        start: () => isMobile 
-          ? `top+=${i * 250} center`  // SPは出現タイミングを短く
-          : `top+=${i * 350} center`, // PCは出現タイミングを長め
-        end: "bottom center",
-        scrub: true,
-      },
-      y: isMobile ? -i * 50 : -i * 80, // SP/PCで上方向の重なり量を調整
+    tl.to(card, {
+      y: -i * 0, // 重なり分（必要に応じて調整）
       opacity: 1,
-      zIndex: cards.length - i,
-      duration: 1,
-    });
+      duration: 0.5
+    }, i * 0.5); // カードごとにタイミングをずらす
   });
-}
-
-// 初期設定
-setupCards();
-
-// ウィンドウリサイズ時に再設定
-window.addEventListener("resize", () => {
-  setupCards();
 });
 
+/*=================================================
+  metaleaf
+===================================================*/
+$(function () {
+    // feature をクリック → モーダルを開く
+    $('.feature').on('click', function () {
+        const modalId = $(this).data('modal');
+        $('#' + modalId).addClass('open');
+
+        // ▼スクロールを止める
+        $('body').css('overflow', 'hidden');
+    });
+
+    // 閉じるボタン
+    $('.modal .close').on('click', function () {
+        $(this).closest('.modal').removeClass('open');
+
+        // ▼スクロールを戻す
+        $('body').css('overflow', 'auto');
+    });
+
+    // モーダル背景をクリック → 閉じる
+    $('.modal').on('click', function (e) {
+        if ($(e.target).hasClass('modal')) {
+            $(this).removeClass('open');
+
+            // ▼スクロールを戻す
+            $('body').css('overflow', 'auto');
+        }
+    });
+});
