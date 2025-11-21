@@ -20,30 +20,49 @@
     <!-- ========================================== -->
     <!-- header -->
     <!-- ========================================== -->
-
     <header>
         <h1>
             <a href="#"><img src="img/logo2.png" alt="logo" class="logo"></a>
         </h1>
 
-        <nav class="nav-menu">
+        <nav class="flip-nav" id="flip-nav">
             <ul>
-                <li class="flip-text"><a href="#reason"><span class="front">選ばれる理由</span><span
-                            class="back">reason</span></a></li>
-                <li class="flip-text"><a href="#strengths"><span class="front">ProNaviの強み</span><span
-                            class="back">strengths</span></a></li>
-                <li class="flip-text"><a href="#change"><span class="front">受講後の変化</span><span
-                            class="back">change</span></a></li>
-                <li class="flip-text"><a href="#achievements"><span class="front">受講生の実績</span><span
-                            class="back">achievements</span></a></li>
-                <li class="flip-text"><a href="#teachers"><span class="front">講師紹介</span><span
-                            class="back">teachers</span></a></li>
-                <li class="flip-text"><a href="#metaleaf"><span class="front">メタリーフとは</span><span
-                            class="back">metaleaf</span></a></li>
-                <li class="flip-text"><a href="#curriculum"><span class="front">カリキュラム</span><span
-                            class="back">curriculum</span></a></li>
-                <li class="flip-text"><a href="#question"><span class="front">Ｑ＆Ａ</span><span
-                            class="back">question</span></a></li>
+                <li class="flip-item">
+                    <a href="#about" class="flip-btn close-menu-link"><span class="jp">ProNaviとは</span><span
+                            class="en">about</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#reason" class="flip-btn close-menu-link"><span class="jp">選ばれる理由</span><span
+                            class="en">reason</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#strengths" class="flip-btn close-menu-link"><span class="jp">ProNaviの強み</span><span
+                            class="en">strengths</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#change" class="flip-btn close-menu-link"><span class="jp">受講後の変化</span><span
+                            class="en">change</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#achievements" class="flip-btn close-menu-link"><span class="jp">受講生の実績</span><span
+                            class="en">achievements</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#teachers" class="flip-btn close-menu-link"><span class="jp">講師紹介</span><span
+                            class="en">teachers</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#metaleaf" class="flip-btn close-menu-link"><span class="jp">メタリーフとは</span><span
+                            class="en">metaleaf</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#curriculum" class="flip-btn close-menu-link"><span class="jp">受講の流れ</span><span
+                            class="en">curriculum</span></a>
+                </li>
+                <li class="flip-item">
+                    <a href="#question" class="flip-btn close-menu-link"><span class="jp">よくある質問</span><span
+                            class="en">question</span></a>
+                </li>
                 <li>
                     <a href="https://www.instagram.com/kakashi.programming.lab/" target="_blank" class="insta-link">
                         <img src="img/instagram-logo.svg" alt="instagram">
@@ -51,8 +70,13 @@
                 </li>
             </ul>
         </nav>
-    </header>
 
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
 
     <main>
@@ -60,7 +84,6 @@
         <!-- mainvisual -->
         <!-- ========================================== -->
         <section class="mainvisual">
-
             <div class="mv-left">
                 <img src="img/mv-illust_1.png" alt="ファミリーのイラスト">
                 <h2>
@@ -76,154 +99,174 @@
             </div>
 
             <div class="mv-right">
+                <!-- ▼メインビュー右のスライダー写真ー▼ -->
                 <ul class="image-slider">
                     <li><img src="img/test.jpeg" alt="学習風景1" class="active"></li>
                     <li><img src="img/test2.jpeg" alt="学習風景1" class="active"></li>
                     <li><img src="img/test3.png" alt="学習風景1" class="active"></li>
                 </ul>
+                <!-- ▲メインビュー右のスライダー写真▲ -->
 
                 <img src="img/mv-illust_2.png" alt="座っている人のイラスト">
-            </div>
-
-
-
-            <!-- カウンセリング予約ボタン -->
-
-            <div class="mv-bg">
-                <img src="img/bg-top.png" alt="背景">
             </div>
         </section>
 
 
-
-        <!-- カウンセリング予約ボタン -->
+        <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+            <p>無料カウンセリングを予約する</p>
+            <img src="img/arrow-icon.png" alt="矢印">
+        </a>
 
                <!-- ========================================== -->
         <!-- worries -->
         <!-- ========================================== -->
         <section id="about">
-
-            <div class="mv-bg2">
-                <img src="img/bg-bottom.png" alt="背景">
-            </div>
-
             <div class="content-wrapper">
                 <ul class="speech-bubbles">
-                    <li class="bubble bubble-1">プログラミングって難しそう…</li>
-
-                    <li class="bubble bubble-2">独学で頑張ったけど、続かなかった…</li>
-
-                    <li class="bubble bubble-3">オンラインで学べるスクールってたくさんありすぎて選べない…</li>
-
-                    <li class="bubble bubble-4">副業したいけど、時間が取れるか不安…</li>
+                    <li class="bubble bubble-1 fadein">プログラミングって難しそう…</li>
+                    <li class="bubble bubble-2 fadein">副業したいけど、時間が取れるか不安…</li>
+                    <li class="bubble bubble-3 fadein">オンラインで学べるスクールって<br>たくさんありすぎて選べない…</li>
+                    <li class="bubble bubble-4 fadein">独学で頑張ったけど、続かなかった…</li>
                 </ul>
 
                 <div class="illustration-area">
-                    <img src="img/back-cuate 1.png" alt="悩みを抱える二人の人物" class="central-illustration">
+                    <img src="img/back-cuate.png" alt="悩みを抱える二人の人物" class="central-illustration">
                 </div>
-
-                <p class="solution-text">
-                    こんな悩みも<br>
-                    <span class="service-name">Pronavi</span>におまかせ
-                    <img src="img/decoration.png" alt="小さな装飾アイコン" class="solution-icon">
-                </p>
             </div>
+
+            <p class="solution-text">
+                こんな悩みも<br>
+                <span class="service-name">ProNavi</span>におまかせ
+                <img src="img/decoration.png" alt="小さな装飾アイコン" class="solution-icon">
+            </p>
         </section>
+
+        <!-- ▼セクションイントロ▼ -->
+        <div class="section-intro">
+            <h2>
+                ProNaviとは「在宅ワークを叶えたい方」に選ばれている<br>
+                <span class="blue">6ヶ月集中のプログラミングスクールです。</span>
+            </h2>
+            <p>
+                プロナビは、ただのプログラミングスクールではありません。<br>
+                1日1時間の学習を半年間。あなたのレベルに合わせた“専用学習プラン”で、本気の6ヶ月を一緒に走ります。<br>
+                決して楽ではありませんが、半年後には「できる自分」に出会えるはず。<br>
+                本気で変わりたいあなたを、誰より本気のコーチが支えます。
+            </p>
+        </div>
+        <!-- ▲セクションイントロ▲ -->
 
         <!-- ========================================== -->
         <!-- reason -->
         <!-- ========================================== -->
-        <section id="reason">
+        <section id="reason" class="container">
             <div class="section-header">
                 <h2 class="section-title">ProNaviが<span class="blue">選ばれる<span class="large">3つ</span>の理由</span></h2>
             </div>
 
-            <div class="reasons-list">
-                <div class="reason-item">
+            <ul class="reasons-list">
+                <li class="reason-item">
                     <div class="icon-area">
                         <img src="img/batch1.png" alt="お客様満足度 99% 月桂樹バッジ" class="stat-badge-image">
                     </div>
                     <div class="text-area">
-                        <h3 class="reason-subtitle">「できる」を実感できるから、満足度が高い</h3>
+                        <h3 class="reason-subtitle">「できる」を実感できるから、満足度が高い。</h3>
                         <p class="reason-description">
                             質問への即レス対応や、ペースに合わせた個別フィードバックで置いていかれない学習環境を実現。モチベーションが続く仕組みが、学習者の満足度を高めています。</p>
                     </div>
-                </div>
+                </li>
 
-                <div class="reason-item reverse">
+                <li class="reason-item reverse fadein">
                     <div class="text-area">
-                        <h3 class="reason-subtitle">「学ぶだけで終わらない、“実践につながる学習設計”」</h3>
+                        <h3 class="reason-subtitle">「学ぶだけで終わらない、実案件獲得まで全工程サポート」</h3>
                         <p class="reason-description">
-                            現役エンジニアによる実案件ベースのカリキュラムで、学んだスキルをすぐに仕事へ。ポートフォリオ案件から案件獲得指導まで、トータルでサポートしています。</p>
+                            コーチが案件獲得まで並走。営業同行とフィードバックを繰り返すことで、自分で案件を獲得するスキルが身につき、実際の案件獲得へ。</p>
                     </div>
                     <div class="icon-area">
                         <img src="img/batch2.png" alt="案件獲得率 93% 月桂樹バッジ" class="stat-badge-image">
                     </div>
-                </div>
+                </li>
 
-                <div class="reason-item">
+                <li class="reason-item fadein">
                     <div class="icon-area">
                         <img src="img/batch3.png" alt="離脱率 1% 月桂樹バッジ" class="stat-badge-image">
                     </div>
-                    <div class="text-area">
+                    <div class="text-area fadein">
                         <h3 class="reason-subtitle">「"一人じゃない"から、続けられる。」</h3>
                         <p class="reason-description">挫折の原因は孤独感と不安。ProNaviでは、仲間・メンター・コミュニティの3つのサポート体制で、あなたの成長を伴走します。</p>
                     </div>
-                </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ▼流れるオレンジの文字ー▼ -->
+        <section class="infinite-marquee">
+            <div class="marquee-track">
+                <span>ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp;</span>
+                <span>ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp; ProNavi&nbsp;</span>
             </div>
         </section>
 
-
+        <!-- ▲流れるオレンジの文字▲ -->
 
         <!-- ========================================== -->
         <!-- strengths -->
         <!-- ========================================== -->
         <section id="strengths">
-            <div class="card-stack-container">
-                <div class="info-card" data-card-id="1">
-                    <div class="card-image-wrapper">
-                        <img src="path/to/image01.jpg" alt="1on1授業の画像" class="card-img">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ProNaviの<span class="large">強み</span></h2>
+                </div>
+                <h3 class="lead">1on1授業でスキルを習得、案件獲得から営業代行まで徹底サポート。<br>コミュニティの仲間と一緒に成長できます。</h3>
+
+                <div class="card-stack-container">
+
+                    <div class="info-card" data-card-id="1">
+                        <div class="card-image-wrapper">
+                            <img src="path/to/image01.jpg" alt="1on1授業の画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">01</span>
+                            <p class="card-title-text">週1回の1on1授業</p>
+                        </div>
                     </div>
 
-                    <div class="card-text-content">
-                        <span class="card-number">01</span>
-                        <p class="card-title-text">週1回の1on1授業</p>
+                    <div class="info-card" data-card-id="2">
+                        <div class="card-image-wrapper">
+                            <img src="path/to/image02.jpg" alt="案件獲得サポートの画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">02</span>
+                            <p class="card-title-text">案件獲得までを徹底サポート</p>
+                        </div>
                     </div>
+
+                    <div class="info-card" data-card-id="3">
+                        <div class="card-image-wrapper">
+                            <img src="path/to/image03.jpg" alt="営業代行サポートの画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">03</span>
+                            <p class="card-title-text">営業代行サポート</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card" data-card-id="4">
+                        <div class="card-image-wrapper">
+                            <img src="path/to/image04.jpg" alt="コミュニティの画像" class="card-img">
+                        </div>
+                        <div class="card-text-content">
+                            <span class="card-number">04</span>
+                            <p class="card-title-text">コミュニティで仲間と繋がる</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="card-detail-section">
                 </div>
 
-                <div class="info-card" data-card-id="2">
-                    <div class="card-image-wrapper">
-                        <img src="path/to/image02.jpg" alt="案件獲得サポートの画像" class="card-img">
-                    </div>
-                    <div class="card-text-content">
-                        <span class="card-number">02</span>
-                        <p class="card-title-text">案件獲得までを徹底サポート</p>
-                    </div>
-                </div>
-
-                <div class="info-card" data-card-id="3">
-                    <div class="card-image-wrapper">
-                        <img src="path/to/image03.jpg" alt="営業代行サポートの画像" class="card-img">
-                    </div>
-                    <div class="card-text-content">
-                        <span class="card-number">03</span>
-                        <p class="card-title-text">営業代行サポート</p>
-                    </div>
-                </div>
-
-                <div class="info-card" data-card-id="4">
-                    <div class="card-image-wrapper">
-                        <img src="path/to/image04.jpg" alt="コミュニティの画像" class="card-img">
-                    </div>
-                    <div class="card-text-content">
-                        <span class="card-number">04</span>
-                        <p class="card-title-text">コミュニティで仲間と繋がる</p>
-                    </div>
-                </div>
             </div>
         </section>
-
-
         <!-- ========================================== -->
         <!-- change -->
         <!-- ========================================== -->
@@ -231,6 +274,8 @@
             <div class="section-header">
                 <h2 class="section-title">受講後の<span class="highlight">変化</span></h2>
             </div>
+            <h3 class="lead">実践的なプログラミングスキルを身につけ、<br>
+                多くの受講生が理想の働き方を叶えています。</h3>
 
             <div class="story-container">
                 <p class="story-appeal-text">一人で学習して挫折したあなたへ</p>
@@ -263,13 +308,15 @@
         <!-- achievements -->
         <!-- ========================================== -->
         <section id="achievements" class="container">
-            <h2 class="section_title">これが<span class="blue">Pronaviの<span class="large">真実</span></span></h2>
+            <div class="section-header">
+                <h2 class="section_title">これが<span class="blue">Pronaviの<span class="large">真実</span></span></h2>
+            </div>
             <h3 class="lead">実践的なプログラミングスキルを身につけ、<br>
                 多くの受講生が理想の働き方を叶えています。</h3>
 
-            <div class="book-wrapper">
-                <div id="book">
-                    <div class="page">
+            <div class="swiper book-area"> 
+                <div class="swiper-wrapper book-wrapper">
+                    <div class="swiper-slide book-item">
                         <div class="student_card">
                             <h4 class="heading">独学で挫折後、サポートを受け<span class="heading_strong">5ヶ月で案件獲得！<br>
                                     副業で月収〇〇達成！</span></h4>
@@ -295,8 +342,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="page">
+                    <div class="swiper-slide book-item">
                         <div class="student_card">
                             <h4 class="heading">仕事・家事・育児の中で<span class="heading_strong">5ヶ月間で初案件獲得！</span><br>
                                 継続的に案件獲得中！<span class="card_title">フリーランスに！</span></h4>
@@ -322,8 +368,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="page">
+                    <div class="swiper-slide book-item">
                         <div class="student_card">
                             <h4 class="heading">別スクールで学んだがスキルUPの為に受講開始！<br>
                                 <span class="heading_strong">4ヶ月で初案件獲得！フリーランスに！</span>
@@ -350,8 +395,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="page">
+                    <div class="swiper-slide book-item">
                         <div class="student_card">
                             <h4 class="heading">育休中に子育てと家事を両立しながら学習<br>
                                 <span class="heading_strong">５ヶ月間で初案件獲得！副業で月収〇〇達成！</span>
@@ -379,6 +423,8 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-button-prev book-prev"></div>
+                <div class="swiper-button-next book-next"></div>
             </div>
 
             <h4 class="">受講生の制作物はコチラからご覧いただけます</h4>
@@ -395,8 +441,10 @@
         <section id="cta1">
             <p class="cta_lead">理想の働き方を叶える、あなた専用のロードマップを作成！<br>
                 お気軽にご相談ください</p>
-            <a class="cta_btn" href="https://line.me/R/ti/p/@420zidsx?oat_content=url"
-                target="_blank">無料カウンセリングを予約する</a>
+            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+                <p>無料カウンセリングを予約する</p>
+                <img src="img/arrow-icon.png" alt="矢印">
+            </a>
         </section>
 
 
@@ -405,74 +453,77 @@
         <!-- teachers -->
         <!-- ========================================== -->
         <section id="teachers">
-            <div class="teachers-header">
-                <h2 class="section_title">あなたの<span class="blue"><span class="large">「成長」</span></span>に<span
-                        class="blue">本気でコミット</span>する</h2>
-                <h3 class="lead">Web制作の第一線で活躍する 現役エンジニアのプロ集団</h3>
-            </div>
-            <div class="card-area">
-                <div class="teacher_cards">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="img/teacher.jpg" alt="講師A">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="teacher_name">加藤 夕騎</h4>
-                            <p class="point">お客様1人ひとりの目的や課題に合った組み合わせをカリキュラムとして提供します。</p>
-                            <p class="comment">
-                                プロナビは複数の最適化されたプログラミング学習トレーニングの中から、お客さま一人ひとりの目的や課題に合った組み合わせをカリキュラムとして提供します。それぞれのトレーニングを構築する際は、学術的な調査はもちろんのこと、学習の中で本当に効果があるのかをコンサルタント・お客さまなど様々な視点から十分な時間をかけて検証した上で展開しています。四半期に一度、カリキュラムを全社的にアップデートするイベントを設けており、トレーニングやカリキュラムを常に進化させ続けています。
-                            </p>
-                        </div>
+            <div class="teachers-area">
+                <div class="teachers-header">
+                    <div class="section-header">
+                        <h2 class="section-title">あなたの<span class="blue"><span class="large">「成長」</span></span>に<br
+                                class="sp-br"><span class="blue">本気でコミット</span>する</h2>
                     </div>
+                    <h3 class="lead">Web制作の第一線で活躍する<br class="sp-br">現役エンジニアのプロ集団</h3>
+                </div>
+                <div class="card-area">
+                    <div class="teacher-cards">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="img/teacher.jpg" alt="講師A">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="teacher-name">加藤 夕騎</h4>
+                                <p class="point">お客様1人ひとりの目的や課題に合った組み合わせをカリキュラムとして提供します。</p>
+                                <p class="comment">
+                                    プロナビは複数の最適化されたプログラミング学習トレーニングの中から、お客さま一人ひとりの目的や課題に合った組み合わせをカリキュラムとして提供します。それぞれのトレーニングを構築する際は、学術的な調査はもちろんのこと、学習の中で本当に効果があるのかをコンサルタント・お客さまなど様々な視点から十分な時間をかけて検証した上で展開しています。四半期に一度、カリキュラムを全社的にアップデートするイベントを設けており、トレーニングやカリキュラムを常に進化させ続けています。
+                                </p>
+                            </div>
+                        </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="img/teacher1.jpg" alt="講師B">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="img/teacher1.jpg" alt="講師B">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="teacher-name">TETSU</h4>
+                                <p class="point">その人にとって継続可能かつ、着実にスキルをつけられるような学習方法を一緒に探し続けます。</p>
+                                <p class="comment">
+                                    プログラミング学習は筋トレに似ていると思います。人それぞれ体格も違えば、やるべき事も変わってくる。間違ったやり方で筋トレをし続けても結果には繋がりにくい。正しいやり方と継続がとても重要です。その人にとって継続可能かつ、しっかり最適な負荷をかけ続ける学習方法を一緒に探し続けます！
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <h4 class="teacher_name">TETSU</h4>
-                            <p class="point">その人にとって継続可能かつ、着実にスキルをつけられるような学習方法を一緒に探し続けます。</p>
-                            <p class="comment">
-                                プログラミング学習は筋トレに似ていると思います。人それぞれ体格も違えば、やるべき事も変わってくる。間違ったやり方で筋トレをし続けても結果には繋がりにくい。正しいやり方と継続がとても重要です。その人にとって継続可能かつ、しっかり最適な負荷をかけ続ける学習方法を一緒に探し続けます！
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="img/teacher2.jpg" alt="講師C">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="img/teacher2.jpg" alt="講師C">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="teacher-name">YURIKO</h4>
+                                <p class="point">プログラミングスキルを習得するには環境×覚悟が必要だと思っています。</p>
+                                <p class="comment">
+                                    世の中には数多くの学習教材や学習方法が溢れていますが、プロナビはあなたの目標を最短で達成するためにはどの手段を取ることが正しいのか、忙しいあなたでも学習が継続できるような仕組みや環境を提供します。「スキルを伸ばす」その覚悟を持っていただければ、私たちコンサルタント一同、全力で、最短でプログラミングスキルを伸ばすサポートをさせていただきます！
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <h4 class="teacher_name">YURIKO</h4>
-                            <p class="point">プログラミングスキルを習得するには環境×覚悟が必要だと思っています。</p>
-                            <p class="comment">
-                                世の中には数多くの学習教材や学習方法が溢れていますが、プロナビはあなたの目標を最短で達成するためにはどの手段を取ることが正しいのか、忙しいあなたでも学習が継続できるような仕組みや環境を提供します。「スキルを伸ばす」その覚悟を持っていただければ、私たちコンサルタント一同、全力で、最短でプログラミングスキルを伸ばすサポートをさせていただきます！
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="img/teacher3.jpg" alt="講師D">
-                        </div>
-                        <div class="card-content">
-                            <h4 class="teacher_name">AOKI</h4>
-                            <p class="point">卒業後も自分の力で成長していけるような学習スキルも同時に身につけて欲しい。</p>
-                            <p class="comment">
-                                プログラミングは多くの言語があり、使われる言語の変化も早いです。そのため、実際に仕事をするときに新しい知識が必要になってくることもあるため、ただ覚えるだけではなく、自分の力で学習を進めていく能力も半年間を通して身につけていただきたいと思っています。
-                            </p>
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="img/teacher3.jpg" alt="講師D">
+                            </div>
+                            <div class="card-content">
+                                <h4 class="teacher-name">AOKI</h4>
+                                <p class="point">卒業後も自分の力で成長していけるような学習スキルも同時に身につけて欲しい。</p>
+                                <p class="comment">
+                                    プログラミングは多くの言語があり、使われる言語の変化も早いです。そのため、実際に仕事をするときに新しい知識が必要になってくることもあるため、ただ覚えるだけではなく、自分の力で学習を進めていく能力も半年間を通して身につけていただきたいと思っています。
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="instagram_area">
-                <h3 class="lead">このスクールの“中の人”が伝える、日々のリアル。</h3>
-                <p class="instagram_area_text">受講生とのエピソードやプログラミングについて、<br>
-                    「仲間と共に創り上げるスクール」の今をお届けしています。<br>
-                    ぜひInstagramで、ProNaviの空気を感じてください。</p>
-                <div class="instagram_post">
-                    <div class="post_kakashi">
+            <div class="instagram-area">
+                <h3 class="lead">このスクールの“中の人”<br class="sp-br">が伝える、日々のリアル。</h3>
+                <p class="instagram-area-text">受講生とのエピソードや<br class="sp-br">プログラミングについて、<br>
+                    「仲間と共に創り上げるスクール」の<br class="sp-br">今をお届けしています。<br>
+                    ぜひInstagramで、ProNaviの空気を<br class="sp-br">感じてください。</p>
+                <div class="instagram-post">
+                    <div class="post-kakashi">
                         <blockquote class="instagram-media"
                             data-instgrm-permalink="https://www.instagram.com/p/DRE6vkBkztF/?utm_source=ig_embed&amp;utm_campaign=loading"
                             data-instgrm-version="14"
@@ -569,7 +620,7 @@
                         </blockquote>
                         <script async src="//www.instagram.com/embed.js"></script>
                     </div>
-                    <div class="post_iruka">
+                    <div class="post-iruka">
                         <blockquote class="instagram-media"
                             data-instgrm-permalink="https://www.instagram.com/p/DMpsdXLS0qW/?utm_source=ig_embed&amp;utm_campaign=loading"
                             data-instgrm-version="14"
@@ -674,42 +725,46 @@
         <!-- metaleaf -->
         <!-- ========================================== -->
         <section id="metaleaf" class="container">
-            <h2 class="section_title">
-                一人で<span class="blue">学習</span>して<span class="blue"><span class="large">挫折</span></span>したあなたへ<br>
-                <span class="blue">未経験</span>で本当にできるか<span class="blue"><span class="large">不安</span></span>なあなたへ
-            </h2>
+            <div class="section-header">
+                <h2 class="section_title">
+                    一人で<span class="blue">学習</span>して<br class="sp-br"><span class="blue"><span
+                            class="large">挫折</span></span>したあなたへ<br>
+                    <span class="blue">未経験</span>で本当にできるか<br class="sp-br"><span class="blue"><span
+                            class="large">不安</span></span>なあなたへ
+                </h2>
+            </div>
             <h3 class="lead">プロナビには講師陣の他に、一緒に強い意志を持って進む仲間もいます。<br>
                 そんな仲間に出会える作業会をぜひ活用してください。</h3>
             <div class="metaleaf_area">
                 <img class="bg" src="img/metaleaf.png" alt="作業会会場">
                 <div class="feature f1" data-modal="modal1">
                     <div class="icon">
-                        <img src="img/icon_038470_256.png" alt="ドアアイコン">
+                        <img src="img/icon_038470_256.png" alt="ドア">
                     </div>
-                    <p>学習仲間が見つかる</p>
+                    <p>仲間が見つかる</p>
                 </div>
                 <div class="feature f2" data-modal="modal2">
                     <div class="icon">
-                        <img src="img/icon_071650_256.png" alt="パソコンアイコン">
+                        <img src="img/icon_071650_256.png" alt="パソコン">
                     </div>
-                    <p>画面で一緒に解決！</p>
+                    <p>画面で一緒に解決</p>
                 </div>
                 <div class="feature f3" data-modal="modal3">
                     <div class="icon">
-                        <img src="img/icon_053970_256.png" alt="質問会アイコン">
+                        <img src="img/icon_053970_256.png" alt="質問会">
                     </div>
                     <p>初心者にやさしい</p>
                 </div>
                 <div class="feature f4" data-modal="modal4">
                     <div class="icon">
                         <img src="img/icon_007500_256.png
-                    " alt="ハッカソンアイコン">
+                    " alt="メダル">
                     </div>
-                    <p>チーム開発に挑戦！</p>
+                    <p>チーム開発に挑戦</p>
                 </div>
                 <div class="feature f5" data-modal="modal5">
                     <div class="icon">
-                        <img src="img/icon_051100_256.png" alt="案件アイコン">
+                        <img src="img/icon_051100_256.png" alt="案件ファイル">
                     </div>
                     <p>仲間と案件シェア</p>
                 </div>
@@ -718,72 +773,72 @@
         <!-- モーダル -->
         <div id="modal1" class="modal">
             <div class="modal-content">
+                <button class="close">&times;</button>
                 <div class="modal_img">
                     <img src="img/metaleaf1.png" alt="仲間">
                 </div>
                 <div class="modal_text">
-                    <p class="modal_title">仲間に出会えて、<br>自然と交流が生まれる</p>
+                    <p class="modal_title">仲間に出会えて、自然と交流が生まれる</p>
                     <p class="modal_comment">作業会では、気軽なおしゃべりから情報交換まで、誰でも参加OK。<br>
                         名前の横に“学習フェーズ”が表示されているので、同じレベルの仲間も見つけやすい。<br>
                         一緒に頑張れる仲間ができると、学習がもっと楽しくなります。</p>
                 </div>
-                <button class="close">閉じる</button>
             </div>
         </div>
         <div id="modal2" class="modal">
             <div class="modal-content">
+                <button class="close">&times;</button>
                 <div class="modal_img">
-                    <img src="" alt="画面共有">
+                    <img src="img/metaleaf5.png" alt="画面共有">
                 </div>
                 <div class="modal_text">
-                    <p class="modal_title">画面共有で質問も<br>サポートもスムーズ</p>
+                    <p class="modal_title">画面共有で質問もサポートもスムーズ</p>
                     <p class="modal_comment">コードの書き方がわからない時も、画面共有を使えばその場で一緒に確認できます。<br>
                         お互いの画面を見ながら話せるから、言葉だけでは伝えにくい部分もすぐ解決。<br>
                         初心者でも安心して質問できる環境です。</p>
                 </div>
-                <button class="close">閉じる</button>
             </div>
         </div>
         <div id="modal3" class="modal">
             <div class="modal-content">
+                <button class="close">&times;</button>
                 <div class="modal_img">
                     <img src="img/metaleaf2.png" alt="初心す初心者">
                 </div>
                 <div class="modal_text">
-                    <p class="modal_title">初心者講習会で<br>安心スタート</p>
+                    <p class="modal_title">初心者講習会で安心スタート</p>
                     <p class="modal_comment">「こんな質問してもいいのかな…？」という不安はいりません。<br>
                         講師や経験者がやさしくゆっくり教えてくれる、初心者向けの安心スペースです。<br>
                         不明点をそのままにせず、着実に前へ進めます。</p>
                 </div>
-                <button class="close">閉じる</button>
             </div>
         </div>
         <div id="modal4" class="modal">
             <div class="modal-content">
+                <button class="close">&times;</button>
                 <div class="modal_img">
-                    <img src="" alt="ハッカソン">
+                    <img src="img/metaleaf4.jpg" alt="ハッカソン">
                 </div>
                 <div class="modal_text">
-                    <p class="modal_title">ハッカソンで<br>チーム開発を体験</p>
+                    <p class="modal_title">ハッカソンでチーム開発を体験</p>
                     <p class="modal_comment">3人1組でチームを組み、テーマに沿ったアイデアを形にして発表！<br>
                         投票で優勝チームを決めるイベント形式だから、楽しみながら開発経験がつめます。<br>
                         チームで作る面白さ・やり切る達成感が味わえる機会です。</p>
                 </div>
-                <button class="close">閉じる</button>
             </div>
         </div>
         <div id="modal5" class="modal">
             <div class="modal-content">
+                <button class="close">&times;</button>
                 <div class="modal_img">
-                    <img src="" alt="案件">
+                    <img src="img/metaleaf3.png" alt="案件">
                 </div>
                 <div class="modal_text">
-                    <p class="modal_title">案件も仲間と<br>協力して進められる</p>
+                    <p class="modal_title">案件も仲間と協力して進められる</p>
                     <p class="modal_comment">「案件を取ったけれど手が足りない…」そんな時も心配なし。<br>
                         作業会で出会った信頼できる仲間に協力をお願いすることができます。<br>
                         一人では難しいことも、仲間と一緒なら乗り越えられます。</p>
                 </div>
-                <button class="close">閉じる</button>
             </div>
         </div>
 
@@ -795,7 +850,10 @@
         <section id="cta2">
             <p class="cta_lead">環境は整っています！<br>
                 理想の働き方を叶える一歩を踏み出しましょう</p>
-            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" target="_blank">無料カウンセリングを予約する</a>
+            <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" class="cta-btn">
+                <p>無料カウンセリングを予約する</p>
+                <img src="img/arrow-icon.png" alt="矢印">
+            </a>
         </section>
 
         <!-- ========================================== -->
@@ -981,11 +1039,12 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/turn.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
             // Optional parameters
@@ -1009,7 +1068,6 @@
             // And if we need scrollbar
             scrollbar: {
                 el: '.swiper-scrollbar',
-
             },
         });
     </script>
