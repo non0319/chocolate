@@ -1,5 +1,117 @@
-@use '_mixin' as *;
+@use "mixin" as *;
 
 #about {
-    margin-top: 200px;
+    position: relative;
+    background-image: url(../img/about-bg.png);
+    background-size: cover;
+    padding: 800px 0;
+    width: 100%;
+    margin-top: -750px;
+
+    .content-wrapper {
+
+        .speech-bubbles {
+            max-width: 1200px;
+
+            li.bubble {
+                font-family: "M PLUS 1p", sans-serif;
+                font-size: 1.1rem;
+                position: absolute;
+                font-weight: 900;
+                background-color: white;
+                padding: 80px;
+                border-radius: 50%;
+                width: fit-content;
+                box-shadow: 30px 0px 0px 0px rgba(239, 239, 239, 0.62);
+            }
+
+            .bubble-1 {
+                top: 40%;
+                left: 20%;
+            }
+
+            .bubble-2 {
+                top: 30%;
+                right: 20%;
+            }
+
+            .bubble-3 {
+                top: 58%;
+                left: 10%;
+            }
+
+            .bubble-4 {
+                top: 50%;
+                right: 15%;
+            }
+        }
+
+        .illustration-area {
+            position: absolute;
+            width: 35%;
+            left: 50%;
+            top: 58%;
+            transform: translateX(-50%);
+            z-index: 2;
+
+            .central-illustration {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+
+    .solution-text {
+        position: absolute;
+        bottom: 13%;
+        left: 10%;
+        font-size: 2rem;
+        color: white;
+        z-index: 5;
+
+        .service-name {
+            font-size: 3rem;
+        }
+
+        .solution-icon {
+            width: 30px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.section-intro {
+    max-width: 950px;
+    margin: 100px auto 160px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: $sub-color;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    
+    h2 {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        margin-bottom: 80px;
+         position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: $main-color;
+            width: 80px;
+            height: 5px;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX( -50%);
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        font-weight: 600;
+    }
 }
