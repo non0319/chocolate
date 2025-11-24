@@ -262,3 +262,35 @@ $(document).ready(function () {
 
 });
 
+
+// 5Stepのレスポンシブ時のアニメーション
+let lastScroll = 0;
+
+$(window).on('scroll load', function () {
+  var scroll = $(window).scrollTop();
+  var windowHeight = $(window).height();
+  var scrollingDown = scroll > lastScroll; // 下にスクロールしているか
+
+  if (scrollingDown) { // 下スクロール時のみ発火
+    $('#sp-curriculum .sp-step-img').each(function (i) {
+      var $el = $(this);
+      var target = $(this).offset().top;
+
+      // 下スクロールで画面下から200px通過したタイミング
+      if (scroll > target - windowHeight -500) {
+        if (!$el.hasClass('roll-in')) {
+          setTimeout(function () {
+            $el.addClass('roll-in');
+          }, i * 150);
+        }
+      }
+    });
+  }
+
+  lastScroll = scroll; // 現在のスクロール位置を保存
+});
+
+
+
+
+
