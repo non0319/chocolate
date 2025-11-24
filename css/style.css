@@ -75,14 +75,6 @@ img {
   background-size: 100% 100%;
 }
 
-.lead {
-  font-size: 1.5rem;
-}
-
-.heading {
-  font-size: 1.25rem;
-}
-
 .section-title {
   font-size: 2.5rem;
   text-align: center;
@@ -97,7 +89,7 @@ img {
   font-size: 1.5rem;
   font-weight: normal;
   text-align: center;
-  margin: 60px 0;
+  margin: 40px 0 80px;
 }
 @media (max-width: 768px) {
   .lead {
@@ -687,27 +679,58 @@ footer a {
   height: 560px;
   margin: 0 auto 60px;
 }
-#achievements .book-area .book-wrapper {
+
+.book-item {
   position: relative;
   max-width: 800px;
   width: 100%;
-  height: 640px;
-  box-shadow: 0 12px 20px -10px rgba(81, 64, 49, 0.6);
+  height: 560px;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  margin: 0 auto;
 }
-
-.book-item {
+.book-item .student-page {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: #E3ECF8;
-}
-.book-item .student_card {
+  border: 3px solid #4B80AA;
+  border-radius: 0 16px 16px 0;
   padding: 40px;
   text-align: center;
+  transition: transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 1.4s ease;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  opacity: 1;
+  cursor: pointer;
 }
-.book-item .student_card .heading_strong {
+.book-item .student-page:hover {
+  transform: rotateY(-10deg) skewY(3deg);
+  box-shadow: -6px 0 15px rgba(0, 0, 0, 0.1);
+}
+.book-item .student-page.flip {
+  transform: rotateY(-180deg) skewY(12deg);
+  box-shadow: -6px 0 15px rgba(0, 0, 0, 0.15); /* 弱め影 */
+}
+.book-item .student-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.book-item .student-page .heading-strong {
   color: #E97C27;
 }
-.book-item .student_card .card_item {
+.book-item .student-page .page-item {
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -716,26 +739,26 @@ footer a {
   gap: 40px;
   margin-top: 20px;
 }
-.book-item .student_card .card_item .card_item_student,
-.book-item .student_card .card_item .card_item_achievement {
+.book-item .student-page .page-item .page-item-student,
+.book-item .student-page .page-item .page-item-achievement {
   width: 48%;
 }
-.book-item .student_card .card_item .card_item_student img {
+.book-item .student-page .page-item .page-item-student img {
   display: block;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin: 0 auto;
 }
-.book-item .student_card .card_item .card_item_student .student_name {
+.book-item .student-page .page-item .page-item-student .student-name {
   font-weight: bold;
   margin-top: 8px;
 }
-.book-item .student_card .card_item .card_item_student .student_comment {
+.book-item .student-page .page-item .page-item-student .student-comment {
   margin-top: 16px;
   text-align: left;
 }
-.book-item .student_card .card_item .card_item_achievement .achievement_img img {
+.book-item .student-page .page-item .page-item-achievement .achievement-img img {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -743,23 +766,28 @@ footer a {
   object-fit: cover;
   filter: drop-shadow(6px 6px 20px rgba(0, 0, 0, 0.15));
 }
-.book-item .student_card .card_item .card_item_achievement .achievement_link {
+.book-item .student-page .page-item .page-item-achievement .achievement-link {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   margin-top: 20px;
 }
-.book-item .student_card .card_item .card_item_achievement .achievement_link .link_text {
+.book-item .student-page .page-item .page-item-achievement .achievement-link .link-text {
   display: block;
   color: #4B80AA;
 }
-.book-item .student_card .card_item .card_item_achievement .achievement_link .link_icon {
+.book-item .student-page .page-item .page-item-achievement .achievement-link .link-icon {
   width: 20px;
   height: 20px;
 }
 
-.link_btn_blue {
+.student-page.flip {
+  transform: rotateY(-180deg) skewY(10deg); /* ← skewはお好みで調整可 */
+  opacity: 0;
+}
+
+.link-btn-blue {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -769,9 +797,9 @@ footer a {
   background: #4B80AA;
   color: #fff;
   gap: 16px;
-  margin: o auto;
+  margin: 20px auto 0;
 }
-.link_btn_blue img {
+.link-btn-blue img {
   width: 40px;
   height: 100%;
   object-fit: contain;
@@ -805,28 +833,15 @@ footer a {
     margin-bottom: 20px;
   }
 }
-#teachers .teachers-area .card-area {
+#teachers .teachers-area .teacher-list-area {
   position: relative;
   width: 100%;
   height: 100vh;
 }
-#teachers .teachers-area .card-area .teacher-cards {
+
+.list {
   position: absolute;
   top: 350px;
-  left: 0;
-  width: 100%;
-  margin: 0 auto;
-}
-@media (max-width: 768px) {
-  #teachers .teachers-area .card-area .teacher-cards {
-    top: 0;
-    height: 100%;
-  }
-}
-
-.card {
-  position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 350px;
@@ -842,7 +857,7 @@ footer a {
   z-index: 10;
 }
 @media (max-width: 768px) {
-  .card {
+  .list {
     flex-direction: column;
     flex-wrap: wrap;
     align-content: space-around;
@@ -852,47 +867,47 @@ footer a {
     margin-top: 20px;
   }
 }
-.card .card-img {
+.list .list-img {
   width: 30%;
 }
 @media (max-width: 768px) {
-  .card .card-img {
+  .list .list-img {
     width: 100%;
   }
 }
-.card .card-img img {
+.list .list-img img {
   width: 100%;
   border-radius: 16px;
   object-fit: cover;
 }
-.card .card-content {
+.list .list-content {
   width: 68%;
 }
 @media (max-width: 768px) {
-  .card .card-content {
+  .list .list-content {
     width: 100%;
   }
 }
-.card .card-content .teacher-name {
+.list .list-content .teacher-name {
   font-size: 1.5rem;
   color: #4B80AA;
   font-weight: 600;
   margin-bottom: 10px;
 }
 @media (max-width: 768px) {
-  .card .card-content .teacher-name {
+  .list .list-content .teacher-name {
     margin-top: 8px;
   }
 }
-.card .card-content .point {
+.list .list-content .point {
   font-weight: 600;
   margin-bottom: 16px;
 }
-.card .card-content .comment {
+.list .list-content .comment {
   color: #555;
 }
 @media (max-width: 768px) {
-  .card .card-content .comment {
+  .list .list-content .comment {
     font-size: 0.875rem;
   }
 }

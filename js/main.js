@@ -1,79 +1,4 @@
 
-
-/*=================================================
-  achievements
-===================================================*/
-
-
-
-/*=================================================
-  teachers
-===================================================*/
-
-gsap.registerPlugin(ScrollTrigger);
-
-window.addEventListener("load", () => {
-  const cards = document.querySelectorAll(".teacher-cards .card");
-  const cardArea = document.querySelector(".card-area");
-
-  // 画面幅に応じた1枚あたりのスクロール距離
-  const cardHeight = window.innerWidth <= 768 ? 300 : 400; // SPは300px, PCは400px
-
-  const pinDistance = cards.length * cardHeight;
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: cardArea,
-      start: "top top",
-      end: "+=" + pinDistance,
-      scrub: true,
-      pin: ".card-area",
-      anticipatePin: 1
-    }
-  });
-
-  cards.forEach((card, i) => {
-    tl.to(card, {
-      y: -i * 0, // 重なり分（必要に応じて調整）
-      opacity: 1,
-      duration: 0.5
-    }, i * 0.5); // カードごとにタイミングをずらす
-  });
-});
-
-/*=================================================
-  metaleaf
-===================================================*/
-$(function () {
-    // feature をクリック → モーダルを開く
-    $('.feature').on('click', function () {
-        const modalId = $(this).data('modal');
-        $('#' + modalId).addClass('open');
-
-        // ▼スクロールを止める
-        $('body').css('overflow', 'hidden');
-    });
-
-    // 閉じるボタン
-    $('.modal .close').on('click', function () {
-        $(this).closest('.modal').removeClass('open');
-
-        // ▼スクロールを戻す
-        $('body').css('overflow', 'auto');
-    });
-
-    // モーダル背景をクリック → 閉じる
-    $('.modal').on('click', function (e) {
-        if ($(e.target).hasClass('modal')) {
-            $(this).removeClass('open');
-
-            // ▼スクロールを戻す
-            $('body').css('overflow', 'auto');
-        }
-    });
-});
-
-
 /*=================================================
 カード
 ===================================================*/
@@ -262,3 +187,113 @@ $(document).ready(function () {
 
 });
 
+
+/*=================================================
+  achievements
+===================================================*/
+const pages = document.querySelectorAll('.student-page');
+let currentPage = 0;
+
+pages.forEach((page, i) => {
+  page.style.zIndex = pages.length - i;
+});
+
+function flipNextPage() {
+  if (currentPage < pages.length) {
+    pages[currentPage].classList.add('flip');
+    currentPage++;
+  }
+
+  // 最後までめくったら自動で戻す
+  if (currentPage === pages.length) {
+    setTimeout(() => {
+      pages.forEach((page, i) => {
+        page.classList.remove('flip');
+        page.style.zIndex = pages.length - i;
+      });
+      currentPage = 0;
+    }, 1500); // アニメ完了後に戻す
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const book = document.querySelector('.book-item');
+  if (book) {
+    book.addEventListener('click', flipNextPage);
+  }
+});
+
+/*=================================================
+  teachers
+===================================================*/
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+  const lists = document.querySelectorAll(".teacher-list-area .list");
+  const listArea = document.querySelector(".teacher-list-area");
+
+  if (!lists.length) return;
+
+  const listHeight = window.innerWidth <= 768 ? 300 : 400;
+  const pinDistance = lists.length * listHeight;
+
+  // 初期値は GSAP でセット（CSSとは衝突しない）
+  gsap.set(lists, { opacity: 0, y: 80 });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: listArea,
+      start: "top top",
+      end: "+=" + pinDistance,
+      scrub: true,
+      pin: listArea,
+      anticipatePin: 1
+    }
+  });
+
+  lists.forEach((item, i) => {
+    tl.to(
+      item,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+      },
+      i * 0.8
+    );
+  });
+});
+
+
+/*=================================================
+  metaleaf
+===================================================*/
+$(function () {
+  // feature をクリック → モーダルを開く
+  $('.feature').on('click', function () {
+    const modalId = $(this).data('modal');
+    $('#' + modalId).addClass('open');
+
+    // ▼スクロールを止める
+    $('body').css('overflow', 'hidden');
+  });
+
+  // 閉じるボタン
+  $('.modal .close').on('click', function () {
+    $(this).closest('.modal').removeClass('open');
+
+    // ▼スクロールを戻す
+    $('body').css('overflow', 'auto');
+  });
+
+  // モーダル背景をクリック → 閉じる
+  $('.modal').on('click', function (e) {
+    if ($(e.target).hasClass('modal')) {
+      $(this).removeClass('open');
+
+      // ▼スクロールを戻す
+      $('body').css('overflow', 'auto');
+    }
+  });
+});
