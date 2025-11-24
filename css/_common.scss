@@ -12,6 +12,11 @@ html {
     font-style: normal;
     font-variation-settings: "width" 100;
     color: $font-color;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 a {
@@ -33,8 +38,6 @@ img {
     width: 100%;
     margin: 0 auto;
     padding-inline: 2%;
-
-    
 }
 
 
@@ -55,7 +58,7 @@ img {
 
 // section-titleの下線
 .section-header {
-    text-align: center; // h2を中央に配置
+    text-align: center; 
     margin-bottom: 20px;
 }
 
@@ -65,13 +68,6 @@ img {
     position: relative;
     padding-bottom: $clip-depth + 10px;
 
-    .blue {
-        color: $line-color;
-    }
-
-    .large {
-        font-size: 64px;
-    }
 
     // 線の描画
     &::after {
