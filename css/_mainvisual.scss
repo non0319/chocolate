@@ -8,28 +8,28 @@
     position: relative;
 
     .mv-left {
-        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         z-index: 10;
         margin-right: -30%;
         margin-left: 5%;
 
         .fam-img {
-            width: 250px;
+            width: 40%;
             display: block;
-            margin: 100px;
         }
 
         h2 {
             margin: 40px 0;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            white-space: nowrap;
         }
 
         .mv-text {
-            margin-left: 100px;
             line-height: 2;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
         }
-
     }
 
     .mv-right {
@@ -78,7 +78,7 @@
         }
 
         .sit-img {
-            width: 170px;
+            width: 130px;
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -117,3 +117,5 @@
     left: 0;
     width: 100%;
 }
+
+
