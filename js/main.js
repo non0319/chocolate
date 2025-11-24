@@ -1,6 +1,6 @@
 
 /*=================================================
-カード
+strengths （カード）
 ===================================================*/
 document.addEventListener('DOMContentLoaded', () => {
   // ================================================
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const detailSection = document.getElementById('card-detail-section');
 
   const SCROLL_OFFSET = 500;
+
 
 
   // ================================================

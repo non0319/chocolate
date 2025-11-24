@@ -6,7 +6,7 @@
     background-size: cover;
     padding: 800px 0;
     width: 100%;
-    margin-top: -750px;
+    margin-top: -30%;
 
     .content-wrapper {
 
@@ -45,30 +45,32 @@
                 right: 15%;
             }
         }
+    }
 
-        .illustration-area {
-            position: absolute;
-            width: 35%;
-            left: 50%;
-            top: 58%;
-            transform: translateX(-50%);
-            z-index: 2;
+    .illustration-area {
+        position: absolute;
+        width: 35%;
+        right: 5%;
+        bottom: 10%;
+        z-index: 2;
 
-            .central-illustration {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
+        .central-illustration {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     }
 
     .solution-text {
         position: absolute;
-        bottom: 13%;
-        left: 10%;
+        bottom: 20%;
+        left: 40%;
+        transform: translateX(-50%);
         font-size: 2rem;
         color: white;
         z-index: 5;
+        white-space: nowrap;
+
 
         .service-name {
             font-size: 3rem;
@@ -90,12 +92,12 @@
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
-    
+
     h2 {
         font-size: 1.8rem;
         line-height: 1.4;
         margin-bottom: 80px;
-         position: relative;
+        position: relative;
 
         &::after {
             position: absolute;
@@ -105,7 +107,7 @@
             height: 5px;
             bottom: -30px;
             left: 50%;
-            transform: translateX( -50%);
+            transform: translateX(-50%);
         }
     }
 
@@ -113,5 +115,47 @@
         font-size: 1.1rem;
         line-height: 1.8;
         font-weight: 600;
+    }
+}
+
+
+@include sp {
+    #about {
+        background-position: center;
+        padding: 600px 0;
+        margin-top: -70%;
+
+        .content-wrapper {
+            .speech-bubbles {
+                li.bubble {
+                    font-size: 0.875rem;
+                    padding: 40px;
+                }
+
+                .bubble-3 {
+                    top: 60%;
+                }
+            }
+        }
+
+            .illustration-area {
+                width: 45%;
+            }
+
+        .solution-text {
+            bottom: 15%;
+            left: 5%;
+            font-size: 1.5rem;
+
+
+            .service-name {
+                font-size: 2.5rem;
+            }
+
+            .solution-icon {
+                width: 20px;
+            }
+        }
+
     }
 }
