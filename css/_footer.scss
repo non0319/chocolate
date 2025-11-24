@@ -5,13 +5,78 @@
 footer {
     max-width: 1120px;
 
-    .container {
+    .footer-inner {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    a{
-        color: black ;
+    .sns-links {
+
+        a {
+            color: white;
+            text-align: center;
+            display: inline-block;
+            line-height: 80px;
+        }
+
+        .instagram {
+            background-color: $main-color;
+
+            .fa-instagram {
+                padding-left: 5px;
+                // font-size: 50px;
+                align-items: center;
+            }
+
+        }
+
+        .line {
+            background-color: $accent-color;
+        }
+
+        .instagram,
+        .line {
+            width: 200px;
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        .line {
+            @include sp {
+                display: none;
+            }
+        }
+
     }
 
+    .line-sp {
+        display: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background-color: #79C2B6;
+        color: #fff;
+        width: 380px;
+        height: 65px;
+        border-radius: 20px;
+        margin: 20px auto 0;
+
+        img {
+            width: 60px;
+            height: 12px;
+        }
+
+        @include sp {
+            display: block;
+        }
+    }
+
+    small {
+        display: block;
+        text-align: center;
+        padding-block: 20px;
+    }
 }
-
